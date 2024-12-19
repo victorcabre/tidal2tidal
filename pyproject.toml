@@ -1,0 +1,7 @@
+[project]
+name = "tidal2tidal"
+version = "0.0.1"
+dependencies = [
+    "tidalapi",
+    "tqdm",
+]
