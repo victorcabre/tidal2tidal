@@ -1,7 +1,26 @@
 [project]
 name = "tidal2tidal"
-version = "0.0.1"
+version = "0.0.0.1"
+authors = [
+  { name="Victor Cabre", email="victorcabreg@gmail.com"},
+]
+description = "A command line tool for transferring liked tracks, albums, artists and playlists between Tidal accounts."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
 dependencies = [
     "tidalapi",
     "tqdm",
 ]
+
+[project.scripts]
+tidal2tidal = "tidal2tidal:do_transfer"
+
+
+[project.urls]
+Homepage = "https://github.com/victorcabre/tidal2tidal"
+Issues = "https://github.com/victorcabre/tidal2tidal/issues"
