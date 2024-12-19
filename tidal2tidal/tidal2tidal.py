@@ -25,7 +25,6 @@ def do_transfer():
         logger.error("ERROR: Unable to login to Tidal")
         exit(1)
 
-    
     # Transfer liked tracks
     tracks = session_src.user.favorites.tracks()
     tracks_sorted = sorted(tracks, key=lambda x: x.user_date_added)
@@ -67,15 +66,14 @@ def do_transfer():
         except:
             logger.error(f"An error occurred while creating playlist {playlist.id} - {playlist.name}")
 
-
     for playlist in tqdm(liked_playlists, desc="Transferring liked playlists"):
         try:
             session_dst.user.favorites.add_playlist(playlist.id)
         except:
             logger.error(f"An error occurred while adding playlist {playlist.id} - {playlist.name}")
             
-
     logger.info("Transfer complete.")
+
 
 if __name__ == "__main__":
     do_transfer()
